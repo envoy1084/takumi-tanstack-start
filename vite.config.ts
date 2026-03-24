@@ -19,7 +19,9 @@ export default defineConfig({
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tailwindcss(),
     tanstackStart(),
-    nitro(),
+    nitro({
+      traceDeps: ["@takumi-rs/image-response", "@takumi-rs/core"],
+    }),
     viteReact(),
   ],
 })
