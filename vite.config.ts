@@ -8,19 +8,13 @@ import tailwindcss from '@tailwindcss/vite'
 import { nitro } from 'nitro/vite'
 
 export default defineConfig({
-  ssr: {
-    external: ['@takumi-rs/image-response', '@takumi-rs/core'],
-  },
-  optimizeDeps: {
-    exclude: ['@takumi-rs/image-response', '@takumi-rs/core'],
-  },
   plugins: [
     devtools(),
     tsconfigPaths({ projects: ['./tsconfig.json'] }),
     tailwindcss(),
     tanstackStart(),
     nitro({
-      traceDeps: ["@takumi-rs/image-response", "@takumi-rs/core"],
+      traceDeps: ["@takumi-rs/core"],
     }),
     viteReact(),
   ],
